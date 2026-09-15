@@ -6,3 +6,39 @@ body {
 h1 {
     color: darkblue;
 }
+#weekly-tasks {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#weekly-tasks h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+}
+
+#goal-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#goal-message {
+    margin-top: 20px;
+    font-weight: bold;
+}
