@@ -1,134 +1,183 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Interactive Dashboard</title>
+```
+<title>My Interactive Dashboard</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-        crossorigin="anonymous"
-    >
+<!-- Bootstrap -->
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+>
 
-    <script
-        defer
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous">
+</script>
+```
+
 </head>
 
 <body>
 
-    <h1>My Interactive Dashboard</h1>
+```
+<h1>My Interactive Dashboard</h1>
 
-    <p>
-        This dashboard was created by Isabella Parraga for the
-        WEB-115 course at Wake Tech.
-    </p>
+<p>
+    This dashboard was created by Isabella Parraga for the
+    WEB-115 course at Wake Tech.
+</p>
 
-    <p>
-        This dashboard demonstrates how JavaScript can be used
-        to create interactive websites.
-    </p>
+<p>
+    This dashboard demonstrates how JavaScript can be used
+    to create interactive websites.
+</p>
 
-    <!-- Displays a message if JavaScript is disabled -->
-    <noscript>
-        Unfortunately, your web browser does not support JavaScript.
-    </noscript>
+<!-- Displays a message if JavaScript is disabled -->
+<noscript>
+    Unfortunately, your web browser does not support JavaScript.
+</noscript>
 
-    <div class="container">
-        <div class="row">
+<div class="container">
 
-            <!-- Weekly Task Goal Calculator -->
-            <div class="col" id="weekly-tasks">
+    <div class="row">
 
-                <h2>Weekly Task Goals</h2>
+        <!-- Weekly Task Goal Calculator -->
+        <div class="col" id="weekly-tasks">
 
-                <form id="goal-form">
+            <h2>Weekly Task Goals</h2>
 
-                    <div class="form-group">
-                        <label for="user-name">Name:</label>
-                        <input
-                            type="text"
-                            id="user-name"
-                            name="user-name"
-                            required
-                        >
-                    </div>
+            <form id="goal-form">
 
-                    <div class="form-group">
-                        <label for="daily-goal">Daily Task Goal:</label>
-                        <input
-                            type="number"
-                            id="daily-goal"
-                            name="daily-goal"
-                            min="0"
-                            required
-                        >
-                    </div>
+                <div class="form-group">
 
-                    <div class="form-group">
-                        <label for="bonus-tasks">Weekly Bonus Tasks:</label>
-                        <input
-                            type="number"
-                            id="bonus-tasks"
-                            name="bonus-tasks"
-                            min="0"
-                            required
-                        >
-                    </div>
+                    <label for="user-name">Name:</label>
 
-                    <button type="submit" id="goal-btn">
-                        Calculate Weekly Goal
-                    </button>
+                    <input
+                        type="text"
+                        id="user-name"
+                        name="user-name"
+                        required
+                    >
 
-                </form>
+                </div>
 
-                <!-- Weekly goal result appears here -->
-                <p id="goal-message"></p>
+                <div class="form-group">
 
-                <!-- Weekly task calculator JavaScript -->
-                <script src="js/task-manager.js"></script>
+                    <label for="daily-goal">Daily Task Goal:</label>
 
-            </div>
+                    <input
+                        type="number"
+                        id="daily-goal"
+                        name="daily-goal"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+
+                    <input
+                        type="number"
+                        id="bonus-tasks"
+                        name="bonus-tasks"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit" id="goal-btn">
+                    Calculate Weekly Goal
+                </button>
+
+            </form>
+
+            <!-- Weekly goal result appears here -->
+            <p id="goal-message"></p>
+
+            <!-- Weekly task calculator JavaScript -->
+            <script src="js/task-manager.js"></script>
 
         </div>
+
+
+        <!-- Imperial/Metric Converter -->
+        <div class="col" id="metric-converter">
+
+            <h2>Imperial/Metric Converter</h2>
+
+            <form id="converter-form">
+
+                <label for="input-value">
+                    Enter a value:
+                </label>
+
+                <input
+                    type="number"
+                    id="input-value"
+                    step="any"
+                    required
+                >
+
+                <label for="conversion-type">
+                    Choose a conversion:
+                </label>
+
+                <select id="conversion-type">
+
+                    <option>Inches to Centimeters</option>
+
+                    <option>Feet to Centimeters</option>
+
+                    <option>Yards to Meters</option>
+
+                    <option>Miles to Kilometers</option>
+
+                    <option>Centimeters to Inches</option>
+
+                    <option>Centimeters to Feet</option>
+
+                    <option>Meters to Yards</option>
+
+                    <option>Kilometers to Miles</option>
+
+                </select>
+
+                <button type="submit" id="convert-button">
+                    Convert
+                </button>
+
+            </form>
+
+            <!-- Conversion result appears here -->
+            <p id="conversion-result"></p>
+
+            <!-- Imperial/Metric converter JavaScript -->
+            <script src="js/metric-converter.js" defer></script>
+
+        </div>
+
     </div>
 
-</body>
-<div class="col" id="metric-converter">
-    <h2>Imperial/Metric Converter</h2>
-
-    <form id="converter-form">
-        <label for="input-value">Enter a value:</label>
-        <input type="number" id="input-value" step="any" required>
-
-        <label for="conversion-type">Choose a conversion:</label>
-        <select id="conversion-type">
-            <option>Inches to Centimeters</option>
-            <option>Feet to Centimeters</option>
-            <option>Yards to Meters</option>
-            <option>Miles to Kilometers</option>
-            <option>Centimeters to Inches</option>
-            <option>Centimeters to Feet</option>
-            <option>Meters to Yards</option>
-            <option>Kilometers to Miles</option>
-        </select>
-
-        <button type="submit" id="convert-button">Convert</button>
-    </form>
-
-    <p id="conversion-result"></p>
-
-    <script src="metric-converter.js" defer></script>
 </div>
+```
+
+</body>
+
 </html>
