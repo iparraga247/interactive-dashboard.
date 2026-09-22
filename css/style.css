@@ -42,3 +42,30 @@ h1 {
     margin-top: 20px;
     font-weight: bold;
 }
+#metric-converter {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#metric-converter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#metric-converter input,
+#metric-converter select,
+#metric-converter button {
+    padding: 8px;
+    font-size: 1rem;
+}
+
+#metric-converter button {
+    cursor: pointer;
+}
+
+#conversion-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
