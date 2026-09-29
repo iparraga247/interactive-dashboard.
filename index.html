@@ -32,6 +32,97 @@
 
 <body>
 
+    <h1>My Interactive Dashboard</h1>
+
+    <p>
+        This dashboard was created by Isabella Parraga for the
+        WEB-115 course at Wake Tech.
+    </p>
+
+    <p>
+        This dashboard demonstrates how JavaScript can be used
+        to create interactive websites.
+    </p>
+
+    <!-- Displays a message if JavaScript is disabled -->
+    <noscript>
+        Unfortunately, your web browser does not support JavaScript.
+    </noscript>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Weekly Task Goal Calculator -->
+            <div class="col" id="weekly-tasks">
+
+                <h2>Weekly Task Goals</h2>
+
+                <form id="goal-form">
+
+                    <div class="form-group">
+                        <label for="user-name">Name:</label>
+                        <input
+                            type="text"
+                            id="user-name"
+                            name="user-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="daily-goal">Daily Task Goal:</label>
+                        <input
+                            type="number"
+                            id="daily-goal"
+                            name="daily-goal"
+                            min="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+                        <input
+                            type="number"
+                            id="bonus-tasks"
+                            name="bonus-tasks"
+                            min="0"
+                            required
+                        
+                        >
+
+<div class="col" id="magic-eight-ball">
+     <script src="magic-eight-ball.js" defer></script>﻿
+     <link rel="stylesheet" href="css/magic-eight-ball.css">
+     <h2 class="heading">Magic Eight Ball</h2>
+      <form>
+       <p>Type a yes/no question below, then click on the Eight Ball below to get your answer!</p>
+       <input id="question" name="question" size="80">
+       <div id="magicEightBall">
+        <div id="circle"></div>
+        <img id="ball" src="img/magic-eight-ball.png"/>
+       </div>
+       <button id="reset" name="reset" type="reset">Ask another question</button>
+      </form>
+      <br>
+   </div>
+
+
+                    </div>
+
+                    <button type="submit" id="goal-btn">
+                        Calculate Weekly Goal
+                    </button>
+
+                </form>
+
+                <!-- Weekly goal result appears here -->
+                <p id="goal-message"></p>
+
+                <!-- Weekly task calculator JavaScript -->
+                <script src="js/task-manager.js"></script>
+
+            </div>
 ```
 <h1>My Interactive Dashboard</h1>
 
@@ -180,5 +271,6 @@
 ```
 
 </body>
+
 
 </html>
