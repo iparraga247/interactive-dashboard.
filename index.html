@@ -123,24 +123,6 @@
                 <script src="js/task-manager.js"></script>
 
             </div>
-```
-<h1>My Interactive Dashboard</h1>
-
-<p>
-    This dashboard was created by Isabella Parraga for the
-    WEB-115 course at Wake Tech.
-</p>
-
-<p>
-    This dashboard demonstrates how JavaScript can be used
-    to create interactive websites.
-</p>
-
-<!-- Displays a message if JavaScript is disabled -->
-<noscript>
-    Unfortunately, your web browser does not support JavaScript.
-</noscript>
-
 <div class="container">
 
     <div class="row">
@@ -162,6 +144,30 @@
                         name="user-name"
                         required
                     >
+
+<!-- Weekly Task List -->
+<div id="task-list">
+
+    <h3>Weekly Task List</h3>
+
+    <p>Enter a task below to manage your goals.</p>
+
+    <form id="task-form">
+        <label for="task-name">Enter task:</label>
+
+        <input
+            type="text"
+            id="task-name"
+            name="task-name"
+            required
+        >
+
+        <button type="button" id="add-task">
+            Add Task
+        </button>
+    </form>
+
+</div>
 
                 </div>
 
