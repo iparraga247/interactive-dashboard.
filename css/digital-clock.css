@@ -1,0 +1,27 @@
+
+/* Module 8: Digital Clock Styling */
+
+#digital-clock {
+    text-align: center;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#digital-clock h3 {
+    color: darkblue;
+    margin-bottom: 20px;
+}
+
+#clock-face {
+    color: darkblue;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#calendar-date {
+    color: darkblue;
+    font-size: 20px;
+}
