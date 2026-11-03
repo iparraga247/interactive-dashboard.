@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,62 +111,63 @@
 
 
             <!-- Imperial/Metric Converter -->
-            <div class="col-md-6">
+<div class="col-md-6" id="metric-converter">
 
-                <section class="dashboard-card" id="metric-converter">
+    <section class="dashboard-card">
 
-                    <h2>Imperial/Metric Converter</h2>
+        <h2>Imperial/Metric Converter</h2>
 
-                    <form id="converter-form">
+        <form id="converter-form">
 
-                        <div class="form-group">
+            <div class="form-group">
 
-                            <label for="input-value">
-                                Enter a value:
-                            </label>
+                <label for="input-value">
+                    Enter a value:
+                </label>
 
-                            <input
-                                type="number"
-                                id="input-value"
-                                step="any"
-                                required>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="conversion-type">
-                                Choose a conversion:
-                            </label>
-
-                            <select id="conversion-type">
-
-                                <option>Inches to Centimeters</option>
-                                <option>Feet to Centimeters</option>
-                                <option>Yards to Meters</option>
-                                <option>Miles to Kilometers</option>
-                                <option>Centimeters to Inches</option>
-                                <option>Centimeters to Feet</option>
-                                <option>Meters to Yards</option>
-                                <option>Kilometers to Miles</option>
-
-                            </select>
-
-                        </div>
-
-                        <button type="submit" id="convert-button">
-                            Convert
-                        </button>
-
-                    </form>
-
-                    <p id="conversion-result"></p>
-
-                </section>
+                <input
+                    type="number"
+                    id="input-value"
+                    step="any"
+                    required>
 
             </div>
 
+            <div class="form-group">
 
+                <label for="conversion-type">
+                    Choose a conversion:
+                </label>
+
+                <select id="conversion-type">
+
+                    <option value="inches-to-cm">Inches to Centimeters</option>
+                    <option value="feet-to-cm">Feet to Centimeters</option>
+                    <option value="yards-to-meters">Yards to Meters</option>
+                    <option value="miles-to-km">Miles to Kilometers</option>
+                    <option value="cm-to-inches">Centimeters to Inches</option>
+                    <option value="cm-to-feet">Centimeters to Feet</option>
+                    <option value="meters-to-yards">Meters to Yards</option>
+                    <option value="km-to-miles">Kilometers to Miles</option>
+
+                </select>
+
+            </div>
+
+            <button type="submit" id="convert-button">
+                Convert
+            </button>
+
+        </form>
+
+        <p id="conversion-result"></p>
+
+    </section>
+
+    <!-- External JavaScript -->
+    <script src="js/metric-converter.js"></script>
+
+</div>
             <!-- Magic Eight Ball -->
             <div class="col-md-6">
 
