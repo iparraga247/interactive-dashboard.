@@ -17,15 +17,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- External JavaScript -->
-   <script src="js/task-manager.js" defer></script>
+    <script src="js/task-manager.js" defer></script>
     <script src="js/metric-converter.js" defer></script>
     <script src="js/magic-eight-ball.js" defer></script>
+
 </head>
 
 <body>
 
     <!-- Dashboard Header -->
     <header class="dashboard-header">
+
         <h1>My Interactive Dashboard</h1>
 
         <p>
@@ -37,6 +39,7 @@
             This dashboard demonstrates how JavaScript
             can be used to create interactive websites.
         </p>
+
     </header>
 
     <noscript>
@@ -48,8 +51,10 @@
 
         <div class="row g-4">
 
-            <!-- Weekly Task Goals -->
+            <!-- Weekly Task Goals and Task Manager -->
             <div class="col-12" id="weekly-tasks">
+
+                <!-- Weekly Task Goals -->
                 <section class="dashboard-card">
 
                     <h2>Weekly Task Goals</h2>
@@ -57,32 +62,41 @@
                     <form id="goal-form">
 
                         <div class="form-group">
+
                             <label for="user-name">Name:</label>
+
                             <input
                                 type="text"
                                 id="user-name"
                                 name="user-name"
                                 required>
+
                         </div>
 
                         <div class="form-group">
+
                             <label for="daily-goal">Daily Task Goal:</label>
+
                             <input
                                 type="number"
                                 id="daily-goal"
                                 name="daily-goal"
                                 min="0"
                                 required>
+
                         </div>
 
                         <div class="form-group">
+
                             <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+
                             <input
                                 type="number"
                                 id="bonus-tasks"
                                 name="bonus-tasks"
                                 min="0"
                                 required>
+
                         </div>
 
                         <button type="submit" id="goal-btn">
@@ -95,10 +109,38 @@
                     <p id="goal-message"></p>
 
                 </section>
+
+                <!-- Weekly Task Manager -->
+                <div id="task-list" class="dashboard-card">
+
+                    <h3>Weekly Task List</h3>
+
+                    <p>Enter a task below to manage your goals.</p>
+
+                    <form id="task-form">
+
+                        <label for="task-name">Enter task:</label>
+
+                        <input
+                            type="text"
+                            id="task-name"
+                            required>
+
+                        <button type="button" id="add-task">
+                            Add Task
+                        </button>
+
+                    </form>
+
+                    <!-- JavaScript will create the task list here -->
+
+                </div>
+
             </div>
 
             <!-- Imperial/Metric Converter -->
             <div class="col-12" id="metric-converter">
+
                 <section class="dashboard-card">
 
                     <h2>Imperial/Metric Converter</h2>
@@ -106,18 +148,23 @@
                     <form id="converter-form">
 
                         <div class="form-group">
+
                             <label for="input-value">Enter a value:</label>
+
                             <input
                                 type="number"
                                 id="input-value"
                                 step="any"
                                 required>
+
                         </div>
 
                         <div class="form-group">
+
                             <label for="conversion-type">Choose a conversion:</label>
 
                             <select id="conversion-type">
+
                                 <option value="inches-to-cm">Inches to Centimeters</option>
                                 <option value="feet-to-cm">Feet to Centimeters</option>
                                 <option value="yards-to-meters">Yards to Meters</option>
@@ -126,7 +173,9 @@
                                 <option value="cm-to-feet">Centimeters to Feet</option>
                                 <option value="meters-to-yards">Meters to Yards</option>
                                 <option value="km-to-miles">Kilometers to Miles</option>
+
                             </select>
+
                         </div>
 
                         <button type="submit" id="convert-button">
@@ -139,10 +188,12 @@
                     <p id="conversion-result"></p>
 
                 </section>
+
             </div>
 
             <!-- Magic Eight Ball -->
             <div class="col-12" id="magic-eight-ball">
+
                 <section class="dashboard-card">
 
                     <h2 class="heading">Magic Eight Ball</h2>
@@ -166,7 +217,7 @@
 
                             <img
                                 id="ball"
-                                src="/Users/isabellaparraga/Downloads/M6-AssignmentFiles/img/magic-eight-ball.png"
+                                src="img/magic-eight-ball.png"
                                 alt="Magic Eight Ball">
 
                         </div>
@@ -183,37 +234,7 @@
                     </form>
 
                 </section>
-            </div>
 
-            <!-- Weekly Task List -->
-            <div class="col-12">
-                <section class="dashboard-card" id="task-list">
-
-                    <h2>Weekly Task List</h2>
-
-                    <p>
-                        Enter a task below to manage your goals.
-                    </p>
-
-                    <form id="task-form">
-
-                        <div class="form-group">
-                            <label for="task-name">Enter task:</label>
-                            <input
-                                type="text"
-                                id="task-name"
-                                required>
-                        </div>
-
-                        <button type="submit" id="add-task">
-                            Add Task
-                        </button>
-
-                    </form>
-
-                    <ul id="tasks"></ul>
-
-                </section>
             </div>
 
         </div>
@@ -222,7 +243,9 @@
 
     <!-- Footer -->
     <footer>
+
         <p>WEB-115 Interactive Productivity Dashboard</p>
+
     </footer>
 
 </body>
