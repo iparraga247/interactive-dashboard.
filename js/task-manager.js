@@ -40,7 +40,7 @@ document.getElementById("goal-form").addEventListener("submit", function(event) 
     document.getElementById("goal-message").textContent = output;
 });
 
-
+console.log("Task Manager JavaScript is working!");
 /* Module 7: Weekly Task Manager */
 
 // Create an empty array
