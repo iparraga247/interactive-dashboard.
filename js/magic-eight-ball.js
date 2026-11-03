@@ -1,7 +1,6 @@
-
 /* Magic Eight Ball Application */
 
-// Array containing possible Magic Eight Ball answers
+// Possible answers
 let answers = [
     "Yes, definitely!",
     "Ask again later.",
@@ -13,77 +12,47 @@ let answers = [
     "Cannot predict right now."
 ];
 
-// Function to display a random answer
-function displayAnswer() {
-
-    // Generate a random number to select an answer
-    let randomIndex = Math.floor(Math.random() * answers.length);
-
-    // Get the selected answer
-    let randomAnswer = answers[randomIndex];
-
-    // Display the answer inside the circle
-    let circle = document.getElementById("circle");
-
-    circle.innerHTML = randomAnswer;
-    circle.style.display = "block";
-}
-
-// Get the Magic Eight Ball image
+// Get the HTML elements
 let ball = document.getElementById("ball");
+let question = document.getElementById("question");
+let circle = document.getElementById("circle");
+let resetButton = document.getElementById("reset");
+let addResponseButton = document.getElementById("add-response");
+let eightBallForm = document.getElementById("eight-ball-form");
 
-// Check the question when the ball is clicked
-ball.addEventListener("mousedown", function() {
+// Stop the form from refreshing the page
+eightBallForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+});
 
-    let question = document.getElementById("question").value;
+// Display a random answer when the ball is clicked
+ball.addEventListener("click", function() {
 
-    // Check if the user entered a question
-    if (question.trim() === "") {
-
+    if (question.value.trim() === "") {
         alert("Please enter a question first.");
-
     } else {
+        let randomIndex = Math.floor(Math.random() * answers.length);
 
-        // Display a random answer
-        displayAnswer();
-
+        circle.innerHTML = answers[randomIndex];
+        circle.style.display = "block";
     }
 
 });
-
-// Get the reset button
-let resetButton = document.getElementById("reset");
 
 // Hide the answer when reset is clicked
 resetButton.addEventListener("click", function() {
-
-    document.getElementById("circle").style.display = "none";
-
+    circle.style.display = "none";
 });
 
-// BONUS: Allow the user to add a new response
-let addResponseButton = document.getElementById("add-response");
-
+// Add a new answer
 addResponseButton.addEventListener("click", function() {
 
-    // Ask the user to enter a new response
     let newResponse = prompt("Enter a new Magic Eight Ball response:");
 
-    // Add the response if the user entered something
     if (newResponse !== null && newResponse.trim() !== "") {
-
         answers.push(newResponse);
 
-        // Display the new response and total number of answers
-        console.log("New response added: " + newResponse);
-        console.log("Total responses: " + answers.length);
-
         alert("Your new response was added!");
-
     }
 
-});
-// Prevent the Magic Eight Ball form from refreshing the page
-document.getElementById("eight-ball-form").addEventListener("submit", function(event) {
-    event.preventDefault();
 });
