@@ -48,6 +48,26 @@
     background-color: #f4effa;
     border-radius: 6px;
 }
+/* Force Module 7 to display */
+
+#weekly-task-manager {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    min-height: 200px;
+    margin: 20px 0;
+    padding: 25px;
+    background-color: white;
+    color: black;
+}
+
+#weekly-task-manager h3,
+#weekly-task-manager p,
+#weekly-task-manager label {
+    color: black;
+}
+
 
 /* Magic Eight Ball */
 
