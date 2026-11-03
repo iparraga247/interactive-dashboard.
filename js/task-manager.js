@@ -19,32 +19,13 @@ document.getElementById("goal-form").addEventListener("submit", function(event) 
 });
 
 
-/* Weekly Task Goals */
-
-// Weekly Goal Calculator
-document.getElementById("goal-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    let userName = document.getElementById("user-name").value;
-    let dailyGoal = Number(document.getElementById("daily-goal").value);
-    let bonusTasks = Number(document.getElementById("bonus-tasks").value);
-
-    let weeklyGoal = dailyGoal * 5;
-    let totalGoal = weeklyGoal + bonusTasks;
-
-    let output = "Hello " + userName +
-        "! Your weekly task goal is " + weeklyGoal +
-        " tasks. With your " + bonusTasks +
-        " bonus tasks, your total goal is " + totalGoal + " tasks.";
-
-    document.getElementById("goal-message").textContent = output;
-});
-
-
 /* Module 7: Weekly Task Manager */
 
 // Create an empty array to store tasks
 let myTasks = [];
+
+// Find the task list container
+let taskContainer = document.getElementById("task-list");
 
 // Create an unordered list
 let taskList = document.createElement("ul");
@@ -52,35 +33,34 @@ let taskList = document.createElement("ul");
 // Give the list an ID
 taskList.id = "user-tasks";
 
-// Add the list to the task-list div
-document.getElementById("task-list").appendChild(taskList);
+// Add the list to the page
+taskContainer.appendChild(taskList);
 
-// Get the Add Task button
+// Find the Add Task button
 let addTaskButton = document.getElementById("add-task");
 
 // Add a click event listener
 addTaskButton.addEventListener("click", function() {
 
-    // Get the task from the input
+    // Get the input value
     let taskInput = document.getElementById("task-name");
     let task = taskInput.value.trim();
 
-    // Check that the input is not empty
     if (task !== "") {
 
-        // Store the task in the array
+        // Add task to array
         myTasks.push(task);
 
-        // Create a new list item
+        // Create a list item
         let listItem = document.createElement("li");
 
-        // Add the task text to the list item
+        // Add task text
         listItem.textContent = task;
 
-        // Add the list item to the unordered list
+        // Display task
         taskList.appendChild(listItem);
 
-        // Clear the input field
+        // Clear input
         taskInput.value = "";
 
     } else {
