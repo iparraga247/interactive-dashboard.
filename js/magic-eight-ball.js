@@ -83,3 +83,7 @@ addResponseButton.addEventListener("click", function() {
     }
 
 });
+// Prevent the Magic Eight Ball form from refreshing the page
+document.getElementById("eight-ball-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+});
