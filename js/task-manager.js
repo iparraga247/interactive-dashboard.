@@ -1,68 +1,183 @@
-// Calculates and displays the user's weekly task goal.
-function weeklyGoal(userName, dailyGoal, bonusTasks) {
-    const weeklyTaskGoal = dailyGoal * 5;
-    const totalGoal = weeklyTaskGoal + bonusTasks;
 
-    const output =
-        `${userName}, your weekly task goal is ${weeklyTaskGoal} tasks. ` +
-        `With ${bonusTasks} bonus tasks, your total weekly goal is ${totalGoal} tasks.`;
+/* Weekly Task Goal Calculator */
 
-    document.getElementById("goal-message").innerHTML = output;
-}
+const goalForm = document.getElementById("goal-form");
 
-// Runs the weekly goal calculation when the button is clicked.
-document.getElementById("goal-btn").addEventListener("click", function (event) {
+goalForm.addEventListener("submit", function(event) {
+
     event.preventDefault();
 
-    const userName = document.getElementById("user-name").value;
+    const name = document.getElementById("user-name").value;
+
     const dailyGoal = Number(document.getElementById("daily-goal").value);
+
     const bonusTasks = Number(document.getElementById("bonus-tasks").value);
 
-    weeklyGoal(userName, dailyGoal, bonusTasks);
-}); 
+    const weeklyGoal = (dailyGoal * 7) + bonusTasks;
+
+    document.getElementById("goal-message").textContent =
+        "Great job, " + name + "! Your weekly task goal is " +
+        weeklyGoal + " tasks.";
+
+});
 
 
-// Array to store tasks
-let myTasks = [];
+/* Imperial/Metric Converter */
 
-// Create the unordered list
-let taskList = document.getElementById("task-list");
-let userTasks = document.createElement("ul");
+const converterForm = document.getElementById("converter-form");
 
-// Give the list an ID
-userTasks.id = "user-tasks";
+converterForm.addEventListener("submit", function(event) {
 
-// Add the list to the task-list div
-taskList.appendChild(userTasks);
+    event.preventDefault();
 
-// Get the Add Task button
-let addTaskButton = document.getElementById("add-task");
+    const value = Number(document.getElementById("input-value").value);
 
-// Get the task input
-let taskInput = document.getElementById("task-name");
+    const conversion = document.getElementById("conversion-type").value;
 
-// Add a click event listener
-addTaskButton.addEventListener("click", function() {
+    let result = 0;
 
-    // Get the task name
-    let taskName = taskInput.value.trim();
-
-    // Check that the input is not empty
-    if (taskName !== "") {
-
-        // Store the task in the array
-        myTasks.push(taskName);
-
-        // Create a list item
-        let listItem = document.createElement("li");
-
-        // Add the task text
-        listItem.textContent = taskName;
-
-        // Add the item to the unordered list
-        userTasks.appendChild(listItem);
-
-        // Clear the input field
-        taskInput.value = "";
+    if (conversion === "Inches to Centimeters") {
+        result = value * 2.54;
     }
+
+    else if (conversion === "Feet to Centimeters") {
+        result = value * 30.48;
+    }
+
+    else if (conversion === "Yards to Meters") {
+        result = value * 0.9144;
+    }
+
+    else if (conversion === "Miles to Kilometers") {
+        result = value * 1.60934;
+    }
+
+    else if (conversion === "Centimeters to Inches") {
+        result = value / 2.54;
+    }
+
+    else if (conversion === "Centimeters to Feet") {
+        result = value / 30.48;
+    }
+
+    else if (conversion === "Meters to Yards") {
+        result = value / 0.9144;
+    }
+
+    else if (conversion === "Kilometers to Miles") {
+        result = value / 1.60934;
+    }
+
+    document.getElementById("conversion-result").textContent =
+        "Result: " + result.toFixed(2);
+
+});
+
+
+/* Magic Eight Ball */
+
+const eightBallForm = document.getElementById("eight-ball-form");
+
+const answers = [
+    "Yes, definitely!",
+    "It is certain.",
+    "Without a doubt!",
+    "Ask again later.",
+    "Maybe.",
+    "The future is unclear.",
+    "My sources say no.",
+    "Don't count on it.",
+    "Very likely!",
+    "Outlook is good!"
+];
+
+eightBallForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const question = document.getElementById("question").value.trim();
+
+    if (question === "") {
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * answers.length);
+
+    document.getElementById("eight-ball-answer").textContent =
+        answers[randomIndex];
+
+});
+
+
+/* Reset Magic Eight Ball */
+
+document.getElementById("reset-question").addEventListener("click", function() {
+
+    eightBallForm.reset();
+
+    document.getElementById("eight-ball-answer").textContent = "";
+
+});
+
+
+/* Weekly Task List */
+
+const taskForm = document.getElementById("task-form");
+
+taskForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const taskInput = document.getElementById("task-name");
+
+    const taskName = taskInput.value.trim();
+
+    if (taskName === "") {
+        return;
+    }
+
+    const taskList = document.getElementById("tasks");
+
+    const listItem = document.createElement("li");
+
+    const taskText = document.createElement("span");
+
+    taskText.textContent = taskName;
+
+    /* Complete Task Checkbox */
+
+    const checkbox = document.createElement("input");
+
+    checkbox.type = "checkbox";
+
+    checkbox.addEventListener("change", function() {
+
+        listItem.classList.toggle("completed");
+
+    });
+
+    /* Delete Task Button */
+
+    const deleteButton = document.createElement("button");
+
+    deleteButton.type = "button";
+
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", function() {
+
+        listItem.remove();
+
+    });
+
+    listItem.appendChild(checkbox);
+
+    listItem.appendChild(taskText);
+
+    listItem.appendChild(deleteButton);
+
+    taskList.appendChild(listItem);
+
+    taskInput.value = "";
+
 });
