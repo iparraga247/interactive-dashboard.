@@ -168,55 +168,54 @@
     <script src="js/metric-converter.js"></script>
 
 </div>
-            <!-- Magic Eight Ball -->
-            <div class="col-md-6">
+<!-- Magic Eight Ball -->
+<div class="col" id="magic-eight-ball">
 
-                <section class="dashboard-card" id="magic-eight-ball">
+    <link rel="stylesheet" href="css/magic-eight-ball.css">
 
-                    <h2>Magic Eight Ball</h2>
+    <h2 class="heading">Magic Eight Ball</h2>
 
-                    <p>
-                        Type a yes/no question below, then click
-                        the Eight Ball to get your answer!
-                    </p>
+    <form id="eight-ball-form">
 
-                    <form id="eight-ball-form">
+        <p>
+            Type a yes/no question below, then click on the
+            Eight Ball below to get your answer!
+        </p>
 
-                        <div class="form-group">
+        <input
+            type="text"
+            id="question"
+            name="question"
+            size="50">
 
-                            <label for="question">
-                                Enter your question:
-                            </label>
+        <div id="magicEightBall">
 
-                            <input
-                                type="text"
-                                id="question"
-                                required>
+            <div id="circle"></div>
 
-                        </div>
+            <img
+                id="ball"
+                src="img/magic-eight-ball.png"
+                alt="Magic Eight Ball">
 
-                        <button type="submit" id="ask-ball">
-                            Ask the Eight Ball
-                        </button>
+        </div>
 
-                    </form>
+        <button id="reset" name="reset" type="reset">
+            Ask another question
+        </button>
 
-                    <div class="magic-ball">
+        <!-- Bonus: Add a new response -->
+        <button id="add-response" type="button">
+            Add New Response
+        </button>
 
-                        <div class="ball-center">8</div>
+    </form>
 
-                    </div>
+    <br>
 
-                    <p id="eight-ball-answer"></p>
+    <!-- External JavaScript -->
+    <script src="js/magic-eight-ball.js"></script>
 
-                    <button type="button" id="reset-question">
-                        Ask Another Question
-                    </button>
-
-                </section>
-
-            </div>
-
+</div>
 
             <!-- Weekly Task List -->
             <div class="col-md-6">
