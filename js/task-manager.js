@@ -1,68 +1,78 @@
-// Calculates and displays the user's weekly task goal.
-function weeklyGoal(userName, dailyGoal, bonusTasks) {
-    const weeklyTaskGoal = dailyGoal * 5;
-    const totalGoal = weeklyTaskGoal + bonusTasks;
 
-    const output =
-        `${userName}, your weekly task goal is ${weeklyTaskGoal} tasks. ` +
-        `With ${bonusTasks} bonus tasks, your total weekly goal is ${totalGoal} tasks.`;
 
-    document.getElementById("goal-message").innerHTML = output;
-}
+/* Weekly Task Goal Calculator */
 
-// Runs the weekly goal calculation when the button is clicked.
-document.getElementById("goal-btn").addEventListener("click", function (event) {
+document.getElementById("goal-form").addEventListener("submit", function(event) {
+
     event.preventDefault();
 
-    const userName = document.getElementById("user-name").value;
-    const dailyGoal = Number(document.getElementById("daily-goal").value);
-    const bonusTasks = Number(document.getElementById("bonus-tasks").value);
+    let userName = document.getElementById("user-name").value;
+    let dailyGoal = Number(document.getElementById("daily-goal").value);
+    let bonusTasks = Number(document.getElementById("bonus-tasks").value);
 
-    weeklyGoal(userName, dailyGoal, bonusTasks);
-}); 
+    let weeklyGoal = dailyGoal * 5;
+    let totalGoal = weeklyGoal + bonusTasks;
+
+    let output = "Hello " + userName +
+        "! Your weekly task goal is " + weeklyGoal +
+        " tasks. With your " + bonusTasks +
+        " bonus tasks, your total goal is " + totalGoal + " tasks.";
+
+    document.getElementById("goal-message").textContent = output;
+
+});
 
 
-// Array to store tasks
+/* Module 7: Weekly Task Manager */
+
+// Create an empty array to store tasks
 let myTasks = [];
 
-// Create the unordered list
-let taskList = document.getElementById("task-list");
-let userTasks = document.createElement("ul");
+// Find the task container
+let taskContainer = document.getElementById("task-list");
+
+// Create an unordered list
+let taskList = document.createElement("ul");
 
 // Give the list an ID
-userTasks.id = "user-tasks";
+taskList.id = "user-tasks";
 
-// Add the list to the task-list div
-taskList.appendChild(userTasks);
+// Add the unordered list to the container
+taskContainer.appendChild(taskList);
 
-// Get the Add Task button
+// Find the Add Task button
 let addTaskButton = document.getElementById("add-task");
-
-// Get the task input
-let taskInput = document.getElementById("task-name");
 
 // Add a click event listener
 addTaskButton.addEventListener("click", function() {
 
-    // Get the task name
-    let taskName = taskInput.value.trim();
+    // Get the task input
+    let taskInput = document.getElementById("task-name");
 
-    // Check that the input is not empty
-    if (taskName !== "") {
+    // Get the entered task
+    let task = taskInput.value.trim();
 
-        // Store the task in the array
-        myTasks.push(taskName);
-
-        // Create a list item
-        let listItem = document.createElement("li");
-
-        // Add the task text
-        listItem.textContent = taskName;
-
-        // Add the item to the unordered list
-        userTasks.appendChild(listItem);
-
-        // Clear the input field
-        taskInput.value = "";
+    // Check if the input is empty
+    if (task === "") {
+        alert("Please enter a task.");
+        return;
     }
+
+    // Add the task to the array
+    myTasks.push(task);
+
+    // Create a list item
+    let listItem = document.createElement("li");
+
+    // Add the task text to the list item
+    listItem.textContent = task;
+
+    // Add the list item to the unordered list
+    taskList.appendChild(listItem);
+
+    // Clear the input field
+    taskInput.value = "";
+
 });
+
+console.log("Task Manager JavaScript is working!");
