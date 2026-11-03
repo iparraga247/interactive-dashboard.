@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,13 +104,12 @@
 
                     </form>
 
-                    <!-- Weekly Goal Output -->
                     <p id="goal-message"></p>
 
                 </section>
 
                 <!-- Module 7: Weekly Task Manager -->
-                <div id="task-list" class="dashboard-card">
+                <section class="dashboard-card">
 
                     <h3>Weekly Task List</h3>
 
@@ -120,22 +117,29 @@
 
                     <form id="task-form">
 
-                        <label for="task-name">Enter task:</label>
+                        <div class="form-group">
 
-                        <input
-                            type="text"
-                            id="task-name"
-                            required>
+                            <label for="task-name">Enter task:</label>
 
+                            <input
+                                type="text"
+                                id="task-name"
+                                name="task-name"
+                                required>
+
+                        </div>
+
+                        <!-- Add Task Button -->
                         <button type="button" id="add-task">
                             Add Task
                         </button>
 
                     </form>
 
-                    <!-- JavaScript will create the unordered list here -->
+                    <!-- JavaScript generates the task list here -->
+                    <div id="task-list"></div>
 
-                </div>
+                </section>
 
             </div>
 
@@ -185,7 +189,6 @@
 
                     </form>
 
-                    <!-- Conversion Output -->
                     <p id="conversion-result"></p>
 
                 </section>
@@ -227,7 +230,6 @@
                             Ask another question
                         </button>
 
-                        <!-- Bonus Feature -->
                         <button id="add-response" type="button">
                             Add New Response
                         </button>
