@@ -1,71 +1,174 @@
+
+/* General Page Styling */
+
 body {
-    background-color: lightblue;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-h1 {
-    color: darkblue;
+/* Header */
+
+.dashboard-header {
+    background-color: #d9c7f2;
+    text-align: center;
+    padding: 35px 20px;
+    margin-bottom: 30px;
 }
-#weekly-tasks {
-    max-width: 600px;
-    margin: 30px auto;
+
+.dashboard-header h1 {
+    color: #493568;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.dashboard-header p {
+    margin-bottom: 8px;
+}
+
+/* Dashboard Layout */
+
+.container {
+    padding-bottom: 30px;
+}
+
+.dashboard-card {
+    background-color: white;
+    border-radius: 12px;
     padding: 25px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-#weekly-tasks h2 {
+.dashboard-card h2 {
+    color: #674b91;
     margin-bottom: 20px;
+    font-size: 23px;
 }
+
+/* Forms */
 
 .form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
-.form-group input {
+input,
+select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
-#goal-btn {
-    padding: 10px 20px;
+/* Buttons */
+
+button {
+    background-color: #9272bd;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
     cursor: pointer;
+    margin-top: 8px;
 }
 
-#goal-message {
-    margin-top: 20px;
+button:hover {
+    background-color: #74539f;
+}
+
+/* Result Messages */
+
+#goal-message,
+#conversion-result,
+#eight-ball-answer {
+    margin-top: 18px;
     font-weight: bold;
-}
-#metric-converter {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
+    color: #674b91;
 }
 
-#metric-converter form {
+/* Task List */
+
+#tasks {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+#tasks li {
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: #f4effa;
+    border-radius: 6px;
+}
+
+#tasks li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+#tasks button {
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+/* Magic Eight Ball */
+
+.magic-ball {
+    width: 170px;
+    height: 170px;
+    background-color: #171717;
+    border-radius: 50%;
+    margin: 25px auto;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
 }
 
-#metric-converter input,
-#metric-converter select,
-#metric-converter button {
-    padding: 8px;
-    font-size: 1rem;
-}
-
-#metric-converter button {
-    cursor: pointer;
-}
-
-#conversion-result {
-    margin-top: 20px;
+.ball-center {
+    width: 65px;
+    height: 65px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
     font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+    background-color: #d9c7f2;
+    text-align: center;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 576px) {
+
+    .dashboard-header h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-card {
+        padding: 18px;
+    }
+
 }
