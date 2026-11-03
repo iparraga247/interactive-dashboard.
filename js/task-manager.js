@@ -1,4 +1,5 @@
 
+
 /* Weekly Task Goal Calculator */
 
 document.getElementById("goal-form").addEventListener("submit", function(event) {

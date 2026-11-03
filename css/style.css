@@ -1,176 +1,6 @@
 
-/* General Page Styling */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-/* Header */
-
-.dashboard-header {
-    background-color: #d9c7f2;
-    text-align: center;
-    padding: 35px 20px;
-    margin-bottom: 30px;
-}
-
-.dashboard-header h1 {
-    color: #493568;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.dashboard-header p {
-    margin-bottom: 8px;
-}
-
-/* Dashboard Layout */
-
-.container {
-    padding-bottom: 30px;
-}
-
-.dashboard-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 25px;
-    height: 100%;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.dashboard-card h2 {
-    color: #674b91;
-    margin-bottom: 20px;
-    font-size: 23px;
-}
-
-/* Forms */
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-/* Buttons */
-
-button {
-    background-color: #9272bd;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 8px;
-}
-
-button:hover {
-    background-color: #74539f;
-}
-
-/* Result Messages */
-
-#goal-message,
-#conversion-result,
-#eight-ball-answer {
-    margin-top: 18px;
-    font-weight: bold;
-    color: #674b91;
-}
 
 /* Task List */
-
-#tasks {
-    margin-top: 20px;
-    padding-left: 20px;
-}
-
-#tasks li {
-    margin-bottom: 12px;
-    padding: 8px;
-    background-color: #f4effa;
-    border-radius: 6px;
-}
-
-#tasks li.completed span {
-    text-decoration: line-through;
-    color: gray;
-}
-
-#tasks button {
-    margin-left: 10px;
-    padding: 5px 10px;
-}
-
-/* Magic Eight Ball */
-
-magic-eight-ball {
-  max-width: 410px;
-  text-align: center;
-  margin: auto;
-}
-
-#circle {
-  font-size: 12pt;
-  background-color: white;
-  color: black;
-  position: absolute;
-  margin-left: 70px;
-  margin-top: 70px;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  text-wrap: wrap;
-  display: none;
-}
-
-
-img:active {
-  animation: shake 1s;
-  animation-iteration-count: infinite;
-}
-
-img:visited {
-  animation: none;
-}
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg);  }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-
-/* Module 7: Weekly Task List */
-
-#weekly-tasks {
-    display: block;
-    width: 100%;
-}
 
 #task-list {
     display: block;
@@ -180,15 +10,18 @@ img:visited {
     padding: 20px;
     margin-top: 20px;
     background-color: white;
-    color: black;
-    border-radius: 10px;
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-#task-list h3,
-#task-list p,
-#task-list label {
-    display: block;
-    color: black;
+#task-list h3 {
+    color: #674b91;
+    margin-bottom: 15px;
+}
+
+#task-list p {
+    color: #333;
 }
 
 #task-name {
@@ -200,4 +33,59 @@ img:visited {
     display: inline-block;
     visibility: visible;
     margin-top: 10px;
+}
+
+/* JavaScript Generated Task List */
+
+#user-tasks {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+#user-tasks li {
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: #f4effa;
+    border-radius: 6px;
+}
+
+/* Magic Eight Ball */
+
+#magic-eight-ball {
+    max-width: 410px;
+    text-align: center;
+    margin: auto;
+}
+
+#circle {
+    font-size: 12pt;
+    background-color: white;
+    color: black;
+    position: absolute;
+    margin-left: 70px;
+    margin-top: 70px;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    text-wrap: wrap;
+    display: none;
+}
+
+img:active {
+    animation: shake 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
